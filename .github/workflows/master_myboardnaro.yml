@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_a064f1276d0a41ff9043d88394a15a9d }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_11e3d7c3ae394a6aa52ab63de43af973 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_607b3a9c064c4ec9984db93bddede8fc }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_6aaca66731ec47228c43bc0bc4ba9455 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_a064f1276d0a41ff9043d88394a15a9d }}/d2ray:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_607b3a9c064c4ec9984db93bddede8fc }}/narocat/d2ray:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'myboardnaro'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_f205ea5404d34a2f86e45c24f46b791f }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_a064f1276d0a41ff9043d88394a15a9d }}/d2ray:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_74092d28b0ab4933afdb4de8b1c1ae20 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_607b3a9c064c4ec9984db93bddede8fc }}/narocat/d2ray:${{ github.sha }}'
