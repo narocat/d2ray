@@ -4,18 +4,18 @@ networks:
 
 services:
   d2ray:
-    image: quackerd/d2ray
+    image: narocat/d2ray
     container_name: d2ray
     ports:
-      - 8443:8443
+      - 443:443
     environment:
-      - HOST=myvps.com
-      - PORT=8443
-      - TARGET_HOST=www.apple.com
+      - HOST=myboardnaro.azurewebsites.net
+      - PORT=443
+      - TARGET_HOST=www.amazon.com
       - TARGET_PORT=443
-      - TARGET_SNI=www.apple.com,apple.com
+      - TARGET_SNI=www.amazon.com
       - USERS=alice,bob,eve
-      - PRIVATE_KEY=KE5MCI5e395fub55O1lsNPzvWw9nNAyCaecRSp3BvHg # Do NOT use this random key
+      - PRIVATE_KEY=uJ0MhKbunVS1l0r-g1DgvbtAhWwQva_ACVKNeVHpn34
       - LOG_LEVEL=warn
     restart: unless-stopped
     networks:
