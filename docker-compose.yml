@@ -9,13 +9,13 @@ services:
     ports:
       - 443:443
     environment:
-      - HOST=myboardnaro.azurewebsites.net
+      - HOST=
       - PORT=443
       - TARGET_HOST=www.amazon.com
       - TARGET_PORT=443
       - TARGET_SNI=www.amazon.com
       - USERS=alice,bob,eve
-      - PRIVATE_KEY=uJ0MhKbunVS1l0r-g1DgvbtAhWwQva_ACVKNeVHpn34
+      - PRIVATE_KEY=
       - LOG_LEVEL=warn
     restart: unless-stopped
     networks:
